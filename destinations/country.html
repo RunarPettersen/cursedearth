@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fun facts of Oslo.">
+    <meta name="robots" content="index, follow">
+    <title>Secret Oslo - Fun Facts</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon96x96.png">
+    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon32x32.png">
+    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon16x16.png">
+    <link rel="stylesheet" href="../css/destinations.css">
+    <script src="../js/analytics.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="../"><img class="logo" src="../images/logo/cursed-earth-logo-tag-white-small.png" alt="Secret Oslo Logo"></a>
+                
+                <form id="searchForm" class="search-form" action="../search-results.html" method="get">
+                    <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <label class="hamburger-menu" id="menuToggle">
+                    <input type="checkbox">
+                    <span class="visually-hidden">Hamburger Menu</span>
+                </label>
+            </nav>
+    
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="./">History</a></li>
+                <li><a href="../discover/">Discover</a></li>
+                <li><a href="../discover/favorites.html">Favorites</a></li>
+                <li><a href="../nearby/">Nearby</a></li>
+            </ul>
+    
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-menu" id="closeMenu">X</button>
+                <form id="mobileSearchForm" class="mobile-search-form" action="../search-results.html" method="get">
+                    <input type="text" id="mobileSearchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <ul class="mobile-nav-links">
+                    <li><a href="../">Home</a></li>
+                <li><a href="./">History</a></li>
+                <li><a href="../discover/">Discover</a></li>
+                <li><a href="../discover/favorites.html">Favorites</a></li>
+                <li><a href="../nearby/">Nearby</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Destinations in <span id="countryTitle">Loading...</span></h2>
+        <div id="countryDestinations">
+            <p>Loading destinations...</p>
+        </div>
+    </main>
+    
+    
+
+    <footer>
+        <div class="footer-container">
+            <img src="../images/logo/secretosloicon96x96.png">
+            <div class="footer-about">
+                <ul class="footer-links">
+                    <li>ABOUT</li>
+                    <li><a href="../about/about.html">About Us</a></li>
+                    <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../about/terms-and-conditions.html">Terms and Conditions</a></li>
+                    <li><a href="../about/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2024 Secret Oslo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cookieConsent">
+        <p>This website uses cookies to ensure you get the best experience. 
+           <a href="about/privacy-policy.html">Learn more</a>
+        </p>
+        <button id="acceptCookies">Accept</button>
+    </div>
+
+    <script type="module" src="../js/utils/search.js"></script>
+    <script src="../js/utils/highlightActiveLink.js"></script>
+    <script src="../js/utils/menuToggle.js"></script>
+    <script type="module" src="../js/country.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "Africa": ["Egypt", "South Africa", "Morocco", "Kenya"],
+    "Asia": ["Japan", "China", "India", "Thailand"],
+    "Europe": ["Norway", "France", "Italy", "Germany", "United Kingdom", "Sweden"],
+    "North America": ["USA", "Canada", "Mexico"],
+    "South America": ["Brazil", "Argentina", "Peru"],
+    "Oceania": ["Australia", "New Zealand"]
+}

@@ -1,0 +1,102 @@
+@import url(style.css);
+@import url(discover.css);
+
+.nearby-container {
+    margin-top: 20px;
+}
+
+.nearby-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ddd;
+}
+
+.nearby-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.nearby-item h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.nearby-item .description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.nearby-item button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nearby-item button:hover {
+    background-color: var(--darker-main-color);
+}
+
+.nearby-item .distance {
+    font-size: 0.9em;
+    color: var(--font-color);
+    margin-top: 5px;
+}
+
+.map-section {
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--main-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    z-index: 1000; /* Ensure the button stays on top of other elements */
+}
+
+.fullscreen-btn:hover {
+    background-color: #007bff;
+    color: var(--darker-main-color);
+    transform: scale(1.1);
+}
+
+.fullscreen-btn:active {
+    transform: scale(0.95);
+}
+
+.fullscreen-btn:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+@media (max-width: 1000px) {
+    #nearbyList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Media query for very small screens (e.g., mobile devices) */
+@media (max-width: 500px) {
+    #nearbyList {
+        grid-template-columns: 1fr;
+    }
+}

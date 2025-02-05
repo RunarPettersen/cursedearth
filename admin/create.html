@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Panel - Add New Destination">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin - Add Destination</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="./"><img class="logo" src="../images/logo/cursed-earth-logo-tag-white-small.png" alt="Secret Oslo Logo"></a>
+                
+                <!-- Search Bar for Desktop -->
+                <form id="searchForm" class="search-form" action="search-results.html" method="get">
+                    <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+    
+                <!-- Hamburger Menu -->
+                <label class="hamburger-menu" id="menuToggle">
+                    <input type="checkbox">
+                    <span class="visually-hidden">Hamburger Menu</span>
+                </label>
+            </nav>
+    
+            <!-- Desktop Menu Links -->
+            <ul class="nav-links">
+                <li><a href="./">Home</a></li>
+                <li><a href="history/">History</a></li>
+                <li><a href="../discover/">Discover</a></li>
+                <li><a href="../discover/favorites.html">Favorites</a></li>
+                <li><a href="../nearby/">Nearby</a></li>
+            </ul>
+    
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-menu" id="closeMenu">X</button>
+                <form id="mobileSearchForm" class="mobile-search-form" action="search-results.html" method="get">
+                    <input type="text" id="mobileSearchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <ul class="mobile-nav-links">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="history/">History</a></li>
+                    <li><a href="discover/">Discover</a></li>
+                    <li><a href="discover/favorites.html">Favorites</a></li>
+                    <li><a href="nearby/">Nearby</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <h1>Admin Panel - Add Destination</h1>
+
+    
+    <main>
+        <form id="destinationForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="introduction">Introduction:</label>
+            <textarea id="introduction" required></textarea>
+
+            <label for="description">Description (HTML allowed):</label>
+            <textarea id="description" required></textarea>
+
+            <label for="where">Where:</label>
+            <input type="text" id="where" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" required>
+
+            <label for="category">Categories (comma separated):</label>
+            <input type="text" id="category" required>
+
+            <label for="tags">Tags (comma separated):</label>
+            <input type="text" id="tags" required>
+
+            <label for="homepage">Homepage (Optional):</label>
+            <input type="url" id="homepage">
+
+            <label for="darknessLevel">Darkness Level (1-100):</label>
+            <input type="number" id="darknessLevel" min="1" max="100" required>
+
+            <label for="latitude">Latitude:</label>
+            <input type="number" id="latitude" step="0.000001" required>
+
+            <label for="longitude">Longitude:</label>
+            <input type="number" id="longitude" step="0.000001" required>
+
+            <label for="image">Image Path:</label>
+            <input type="text" id="image" required>
+
+            <label for="galleryPath">Gallery Path:</label>
+            <input type="text" id="galleryPath" required>
+
+            <label for="galleryImages">Gallery Images (comma separated):</label>
+            <input type="text" id="galleryImages" required>
+
+            <label for="spotlight">Spotlight:</label>
+            <input type="checkbox" id="spotlight">
+
+            <button type="submit">Add Destination</button>
+        </form>
+
+        <div id="message"></div>
+    </main>
+
+    <button id="logoutBtn">Logout</button>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Manage Destinations</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="./"><img class="logo" src="../images/logo/cursed-earth-logo-tag-white-small.png" alt="Secret Oslo Logo"></a>
+                
+                <!-- Search Bar for Desktop -->
+                <form id="searchForm" class="search-form" action="search-results.html" method="get">
+                    <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+    
+                <!-- Hamburger Menu -->
+                <label class="hamburger-menu" id="menuToggle">
+                    <input type="checkbox">
+                    <span class="visually-hidden">Hamburger Menu</span>
+                </label>
+            </nav>
+    
+            <!-- Desktop Menu Links -->
+            <ul class="nav-links">
+                <li><a href="./">Home</a></li>
+                <li><a href="history/">History</a></li>
+                <li><a href="../discover/">Discover</a></li>
+                <li><a href="../discover/favorites.html">Favorites</a></li>
+                <li><a href="../nearby/">Nearby</a></li>
+            </ul>
+    
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-menu" id="closeMenu">X</button>
+                <form id="mobileSearchForm" class="mobile-search-form" action="search-results.html" method="get">
+                    <input type="text" id="mobileSearchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <ul class="mobile-nav-links">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="history/">History</a></li>
+                    <li><a href="discover/">Discover</a></li>
+                    <li><a href="discover/favorites.html">Favorites</a></li>
+                    <li><a href="nearby/">Nearby</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <h2>Admin Dashboard - Destinations</h2>
+    <a href="create.html" class="create-btn">+ Add New Destination</a>
+
+    <table id="destinationTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script type="module" src="./adminDashboard.js"></script>
+</body>
+</html>
