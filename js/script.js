@@ -145,11 +145,16 @@ const attachEventListeners = () => {
 
 // ✅ Run the App Once User is Authenticated
 onAuthStateChanged(auth, (user) => {
+    const isAdminPage = window.location.pathname.includes("/admin/"); // Check if on admin page
+
     if (user) {
         console.log(`✅ Logged in as: ${user.email}`);
         displayDestinations(user);
-    } else {
-        console.warn("⚠️ User not logged in. Redirecting...");
+    } else if (isAdminPage) {
+        console.warn("⚠️ User not logged in. Redirecting to login...");
         window.location.href = "../auth/login.html";
+    } else {
+        console.warn("⚠️ User not logged in. Proceeding as guest.");
+        displayDestinations(null); // Allow public viewing
     }
 });
