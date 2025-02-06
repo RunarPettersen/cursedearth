@@ -61,7 +61,7 @@ const displayTopDestinations = async (topDestinations, listId) => {
 
             listHTML += `
                 <li class="top-destination">
-                    <img src="../${destination.image || 'images/placeholder.jpg'}" alt="${destination.title}" class="top-destination-img">
+                    <img src="./${destination.image || 'images/placeholder.jpg'}" alt="${destination.title}" class="top-destination-img">
                     <a href="../discover/detail.html?id=${destinationId}" class="top-destination-link">
                         <div class="top-destination-info">
                             <strong>${destination.title}</strong><br>
