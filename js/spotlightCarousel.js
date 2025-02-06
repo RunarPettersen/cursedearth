@@ -57,7 +57,7 @@ const displaySpotlightCarousel = () => {
 
         slide.innerHTML = `
             <a href="../discover/detail.html?id=${destination.id}">
-                <img src="../${destination.image}" alt="${destination.title}">
+                <img src="./${destination.image}" alt="${destination.title}">
                 <div class="carousel-text">
                     <h3>${destination.title}</h3>
                     <p>${destination.introduction || "No introduction available."}</p>
