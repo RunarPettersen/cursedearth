@@ -48,7 +48,7 @@
 
 .nearby-item .distance {
     font-size: 0.9em;
-    color: var(--font-color);
+    color: #000;
     margin-top: 5px;
 }
 
