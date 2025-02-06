@@ -1,0 +1,34 @@
+@import url("./style.css");
+
+.see-all-link {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.category-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.place-item {
+    /* background-color: var(--backround-color); */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.place-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.themes-opening-text p {
+    padding: 0 10px;
+}

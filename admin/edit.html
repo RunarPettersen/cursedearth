@@ -51,33 +51,35 @@
             </div>
         </div>
     </header>
-    <h2>Edit Destination</h2>
-    <form id="editForm">
-        <input type="text" id="title" placeholder="Title" required>
-        <textarea id="introduction" placeholder="Introduction"></textarea>
-        <textarea id="description" placeholder="Description"></textarea>
-        <input type="text" id="where" placeholder="Where?">
-        <input type="text" id="address" placeholder="Address">
-        <input type="text" id="city" placeholder="City">
-        <input type="text" id="country" placeholder="Country">
-        <input type="text" id="category" placeholder="Category (comma-separated)">
-        <input type="text" id="tags" placeholder="Tags (comma-separated)">
-        <input type="url" id="homepage" placeholder="Homepage URL">
-        <input type="number" id="darknessLevel" placeholder="Darkness Level (1-100)">
-        <input type="text" id="latitude" placeholder="Latitude">
-        <input type="text" id="longitude" placeholder="Longitude">
-        <input type="text" id="image" placeholder="Main Image Path">
-        <input type="text" id="galleryPath" placeholder="Gallery Path">
-        <input type="text" id="galleryImages" placeholder="Gallery Images (comma-separated)">
-        <label>
-            <input type="checkbox" id="spotlight">
-            Feature in Spotlight
-        </label>
-        
-        <button type="submit">Save Changes</button>
-    </form>
-
-    <p id="editMessage"></p>
+    <main>
+        <h2>Edit Destination</h2>
+        <form id="editForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="introduction" placeholder="Introduction"></textarea>
+            <textarea id="description" placeholder="Description"></textarea>
+            <input type="text" id="where" placeholder="Where?">
+            <input type="text" id="address" placeholder="Address">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="country" placeholder="Country">
+            <input type="text" id="category" placeholder="Category (comma-separated)">
+            <input type="text" id="tags" placeholder="Tags (comma-separated)">
+            <input type="url" id="homepage" placeholder="Homepage URL">
+            <input type="number" id="darknessLevel" placeholder="Darkness Level (1-100)">
+            <input type="text" id="latitude" placeholder="Latitude">
+            <input type="text" id="longitude" placeholder="Longitude">
+            <input type="text" id="image" placeholder="Main Image Path">
+            <input type="text" id="galleryPath" placeholder="Gallery Path">
+            <input type="text" id="galleryImages" placeholder="Gallery Images (comma-separated)">
+            <label>
+                <input type="checkbox" id="spotlight">
+                Feature in Spotlight
+            </label>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    
+        <p id="editMessage"></p>
+    </main>
 
     <script type="module" src="./editDestination.js"></script>
 </body>

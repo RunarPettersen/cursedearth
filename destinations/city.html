@@ -1,16 +1,16 @@
-<html lang="en"></html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Details of your hidden gems.">
+    <meta name="description" content="Travel tips for people coming to Oslo and Norway.">
     <meta name="robots" content="index, follow">
-    <title>Secret Oslo - Destination Details</title>
+    <title>Secret Oslo - Travel Tips</title>
     <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon96x96.png">
     <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon32x32.png">
     <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon16x16.png">
-    <link rel="stylesheet" href="../css/discover.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../css/destinations.css">
+    <script src="../js/analytics.js"></script>
 </head>
 <body>
     <header>
@@ -18,27 +18,24 @@
             <nav class="nav-bar">
                 <a href="../"><img class="logo" src="../images/logo/cursed-earth-logo-tag-white-small.png" alt="Secret Oslo Logo"></a>
                 
-                <!-- Search Bar for Desktop -->
                 <form id="searchForm" class="search-form" action="../search-results.html" method="get">
                     <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
                     <button type="submit" class="search-button">Search</button>
-                </form>
+                </form>   
                 <label class="hamburger-menu" id="menuToggle">
                     <input type="checkbox">
                     <span class="visually-hidden">Hamburger Menu</span>
                 </label>
             </nav>
     
-            <!-- Desktop Menu Links -->
             <ul class="nav-links">
                 <li><a href="../">Home</a></li>
-                <li><a href="../destinations/">Destination</a></li>
-                <li><a href="./">Discover</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="./">Destination</a></li>
+                <li><a href="../discover/">Discover</a></li>
+                <li><a href="../discover/favorites.html">Favorites</a></li>
                 <li><a href="../nearby/">Nearby</a></li>
             </ul>
     
-            <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <button class="close-menu" id="closeMenu">X</button>
                 <form id="mobileSearchForm" class="mobile-search-form" action="../search-results.html" method="get">
@@ -47,37 +44,27 @@
                 </form>
                 <ul class="mobile-nav-links">
                     <li><a href="../">Home</a></li>
-                    <li><a href="../destinations/">Destination</a></li>
-                    <li><a href="./">Discover</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="./">Destination</a></li>
+                    <li><a href="../discover/">Discover</a></li>
+                    <li><a href="../discover/favorites.html">Favorites</a></li>
                     <li><a href="../nearby/">Nearby</a></li>
                 </ul>
             </div>
         </div>
     </header>
+    
     <main>
-        <h1 id="detail-title">Destination Details</h1>
-        <section class="destination-details" id="destinationDetails">
+        <h1 id="cityHeader">Loading...</h1>
+        <h3 id="destinationCount"></h3>
+    
+        <section id="cityDestinations" class="city-destinations">
+            <p>Loading destinations...</p>
         </section>
-
-        <section id="nearby-places" class="nearby-places">
-            <h2>Nearby Places From Here:</h2>
-            <div id="nearbyList">Loading nearby places...</div>
-        </section>
-    </main>
-
-    <div id="notification-container" class="notification-container"></div>
-
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img src="" alt="Enlarged Gallery Image">
-        <button id="prev-btn" class="nav-btn prev-btn">&lt;</button>
-        <button id="next-btn" class="nav-btn next-btn">&gt;</button>
-    </div>
+    </main>    
 
     <footer>
         <div class="footer-container">
-            <img src="../images/logo/cursed-favicon-big.png">
+            <img src="../images/logo/secretosloicon96x96.png">
             <div class="footer-about">
                 <ul class="footer-links">
                     <li>ABOUT</li>
@@ -98,11 +85,9 @@
         <button id="acceptCookies">Accept</button>
     </div>
 
-    <div class="loader"></div>
-    
-    <script type="module" src="../js/detail.js"></script>
     <script type="module" src="../js/utils/search.js"></script>
+    <script src="../js/utils/highlightActiveLink.js"></script>
     <script src="../js/utils/menuToggle.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="../js/city.js"></script>
 </body>
 </html>

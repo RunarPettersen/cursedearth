@@ -1,23 +1,22 @@
 @import url("./style.css");
 
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #222;
     color: white;
     text-align: center;
     padding: 20px;
-}
+} */
 
-form {
-    max-width: 500px;
+#editForm, #destinationForm {
+    max-width: 1200px;
     margin: 0 auto;
-    background: #333;
     padding: 20px;
     border-radius: 8px;
 }
 
-input, textarea, button {
-    width: 100%;
+#destinationForm input, #destinationForm textarea, #destinationForm button, #editForm input, #editForm textarea, #editForm button {
+    width: 98%;
     margin-bottom: 10px;
     padding: 8px;
     border: none;
@@ -109,14 +108,15 @@ td {
 }
 
 /* Form Updates */
-form {
+
+/* form {
     background: #444;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-}
+} */
 
-input, textarea, button {
+/* input, textarea, button {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
@@ -125,11 +125,11 @@ input, textarea, button {
     font-size: 16px;
     background: #2b2b2b;
     color: white;
-}
+} */
 
-textarea {
+/* textarea {
     min-height: 100px;
-}
+} */
 
 button {
     background-color: #007bff;

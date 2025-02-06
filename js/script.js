@@ -10,7 +10,7 @@ setupLoader();
 const auth = getAuth();
 
 /**
- * ✅ Fetch and Display Destinations from Firestore
+ * ✅ Fetch and Display Limited Destinations for the Homepage
  */
 async function displayDestinations(user) {
     const restaurantSection = document.querySelector(".restaurants-section");
@@ -26,48 +26,21 @@ async function displayDestinations(user) {
 
     try {
         const querySnapshot = await getDocs(collection(db, "destinations"));
+        const restaurants = [];
+        const monuments = [];
 
-        if (querySnapshot.empty) {
-            console.warn("⚠️ No destinations found in Firestore.");
-            restaurantSection.innerHTML = "<p>No restaurants available.</p>";
-            monumentSection.innerHTML = "<p>No monuments available.</p>";
-            return;
-        }
-
-        querySnapshot.forEach(async (doc) => {
-            const data = doc.data();
-            const destinationDiv = document.createElement("div");
-            destinationDiv.classList.add("place-item");
-
-            // ✅ Make the entire card clickable, except for buttons
-            destinationDiv.innerHTML = `
-                <a href="../discover/detail.html?id=${doc.id}" class="destination-link">
-                    <h3>${data.title || "Unknown Title"}, ${data.country || "Unknown Country"}</h3>
-                    <img src="${data.image || 'images/placeholder.jpg'}" alt="${data.title || 'No Image'}" class="place-image">
-                    <p>${data.introduction || "No description available."}</p>
-                </a>
-                <div class="status-buttons">
-                    <button class="wantToGo-btn tooltip" data-id="${doc.id}">
-                        Want to go <span class="tooltiptext">Save this destination</span>
-                    </button>
-                    <button class="beenHere-btn tooltip" data-id="${doc.id}">
-                        Been here <span class="tooltiptext">Mark as visited</span>
-                    </button>
-                </div>
-            `;
-
+        querySnapshot.forEach((doc) => {
+            const data = { id: doc.id, ...doc.data() };
             if (data.category.includes("restaurant")) {
-                restaurantSection.appendChild(destinationDiv);
+                restaurants.push(data);
             } else if (data.category.includes("monument")) {
-                monumentSection.appendChild(destinationDiv);
+                monuments.push(data);
             }
-
-            // ✅ Fetch and Apply Saved Status
-            await applySavedStatus(doc.id);
         });
 
-        // ✅ Attach event listeners for buttons after rendering
-        setTimeout(() => attachEventListeners(), 500);
+        // ✅ Display up to 4 items for each category
+        await displayLimitedDestinations(restaurants, restaurantSection, "restaurants");
+        await displayLimitedDestinations(monuments, monumentSection, "monuments");
 
         console.log("✅ Destinations loaded successfully!");
 
@@ -78,7 +51,52 @@ async function displayDestinations(user) {
 }
 
 /**
- * ✅ Apply Saved Status to Buttons
+ * ✅ Display Only 4 Destinations per Category on Homepage
+ */
+const displayLimitedDestinations = async (destinations, section, category) => {
+    section.innerHTML = ""; // Clear section
+
+    const limitedDestinations = destinations.slice(0, 4); // Limit to 4 items
+
+    for (const data of limitedDestinations) { // ✅ Loop through destinations
+        const destinationDiv = document.createElement("div");
+        destinationDiv.classList.add("place-item");
+        destinationDiv.innerHTML = `
+            <a href="../discover/detail.html?id=${data.id}" class="destination-link">
+                <h3>${data.title || "Unknown Title"}, ${data.country || "Unknown Country"}</h3>
+                <img src="${data.image || 'images/placeholder.jpg'}" alt="${data.title || 'No Image'}" class="place-image">
+                <p>${data.introduction || "No description available."}</p>
+            </a>
+            <div class="status-buttons">
+                <button class="wantToGo-btn tooltip" data-id="${data.id}">
+                    Want to go <span class="tooltiptext">Save this destination</span>
+                </button>
+                <button class="beenHere-btn tooltip" data-id="${data.id}">
+                    Been here <span class="tooltiptext">Mark as visited</span>
+                </button>
+            </div>
+        `;
+        section.appendChild(destinationDiv);
+
+        // ✅ Apply saved status from the database
+        await applySavedStatus(data.id);
+    }
+
+    // ✅ Attach event listeners after rendering
+    setTimeout(() => attachEventListeners(), 500);
+
+    // ✅ Add "See All" Link at the End
+    if (destinations.length > 4) {
+        const seeAllLink = document.createElement("a");
+        seeAllLink.href = `../themes/${category}/index.html`;
+        seeAllLink.classList.add("see-all-link");
+        seeAllLink.textContent = `See all ${category}`;
+        section.appendChild(seeAllLink);
+    }
+};
+
+/**
+ * ✅ Apply Saved Status to Buttons (Runs After Page Load)
  */
 const applySavedStatus = async (destinationId) => {
     const status = await getUserDestinationStatus(destinationId);

@@ -1,4 +1,4 @@
-import { db } from "../constants/api.js"; // ✅ Firestore setup
+import { db } from "../constants/api.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 import { updateMetaTags } from "./metaTags.js";
 import { displayDestinationDetails } from "./displayDestination.js";
@@ -11,7 +11,7 @@ export const fetchDestinationDetails = async () => {
     const destinationId = urlParams.get('id');
 
     if (!destinationId) {
-        console.error("❌ No destination ID found in URL.");
+        console.error("No destination ID found in URL.");
         return;
     }
 
@@ -35,6 +35,6 @@ export const fetchDestinationDetails = async () => {
         console.log("✅ Destination loaded:", destination);
 
     } catch (error) {
-        console.error("❌ Error fetching destination details:", error);
+        console.error("Error fetching destination details:", error);
     }
 };

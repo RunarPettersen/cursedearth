@@ -3,42 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="You favorite hidden gems in Oslo.">
+    <meta name="description" content="Visit some dark monuments.">
     <meta name="robots" content="index, follow">
-    <title>Secret Oslo - Favorite Places</title>
-    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon96x96.png">
-    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon32x32.png">
-    <link rel="icon" type="image/x-icon" href="../images/logo/secretosloicon16x16.png">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Cursed Earth - Monuments</title>
+    <link rel="icon" type="image/x-icon" href="../../images/logo/cursed-favicon-96.png">
+    <link rel="stylesheet" href="../../css/themes.css">
 </head>
 <body>
     <header>
         <div class="container">
             <nav class="nav-bar">
-                <a href="../"><img class="logo" src="../images/logo/cursed-earth-logo-tag-white-small.png" alt="Secret Oslo Logo"></a>
+                <a href="../../"><img class="logo" src="../../images/logo/cursed-earth-logo-tag-white-small.png" alt="Cursed Earth Logo"></a>
                 
-                <!-- Search Bar for Desktop -->
                 <form id="searchForm" class="search-form" action="../search-results.html" method="get">
                     <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
                     <button type="submit" class="search-button">Search</button>
                 </form>
-    
                 <label class="hamburger-menu" id="menuToggle">
                     <input type="checkbox">
                     <span class="visually-hidden">Hamburger Menu</span>
                 </label>
             </nav>
     
-            <!-- Desktop Menu Links -->
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="../destinations/">Destination</a></li>
-                <li><a href="../discover/">Discover</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="../nearby/">Nearby</a></li>
+                <li><a href="../../">Home</a></li>
+                <li><a href="../../destinations/">Destinations</a></li>
+                <li><a href="../../discover/">Discover</a></li>
+                <li><a href="../../discover/favorites.html">Favorites</a></li>
+                <li><a href="../../nearby/">Nearby</a></li>
             </ul>
     
-            <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <button class="close-menu" id="closeMenu">X</button>
                 <form id="mobileSearchForm" class="mobile-search-form" action="../search-results.html" method="get">
@@ -46,36 +40,28 @@
                     <button type="submit" class="search-button">Search</button>
                 </form>
                 <ul class="mobile-nav-links">
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../destinations/">Destination</a></li>
-                    <li><a href="../discover/">Discover</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                    <li><a href="../nearby/">Nearby</a></li>
+                    <li><a href="../../">Home</a></li>
+                    <li><a href="../../destinations/">Destinations</a></li>
+                    <li><a href="../../discover/">Discover</a></li>
+                    <li><a href="../../discover/favorites.html">Favorites</a></li>
+                    <li><a href="../../nearby/">Nearby</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <main>
-        <h2>Saved Places</h2>
-
-        <section>
-            <h3 id="saved-section-h3">Want to Go</h3>
-            <div class="saved-section" id="wantToGoSection">
-                <p>Loading...</p>
-            </div>
-        </section>
-
-        <section>
-            <h3 id="saved-section-h3">Been Here</h3>
-            <div class="saved-section" id="beenHereSection">
-                <p>Loading...</p>
-            </div>
+        <div class="themes-opening-text">
+            <H1>Monuments</H1>
+            <p>There are many dark monuments around the world. From devils and demons, to the sad and tragic history of wars.</p>
+        </div>
+        <section class="category-section" id="categorySection">
+            <p>Loading monuments...</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-container">
-            <img src="../images/logo/cursed-favicon-big.png">
+            <img src="../../images/logo/cursed-favicon-big.png">
             <div class="footer-about">
                 <ul class="footer-links">
                     <li>ABOUT</li>
@@ -96,11 +82,9 @@
         <button id="acceptCookies">Accept</button>
     </div>
 
-    <div class="loader"></div>
-
-    <script type="module" src="../js/favorites.js"></script>
-    <script type="module" src="../js/utils/search.js"></script>
-    <script src="../js/utils/highlightActiveLink.js"></script>
-    <script src="../js/utils/menuToggle.js"></script>
+    <script type="module" src="../../js/utils/search.js"></script>
+    <script src="../../js/utils/highlightActiveLink.js"></script>
+    <script src="../../js/utils/menuToggle.js"></script>
+    <script type="module" src="../../js/themes.js"></script>
 </body>
 </html>
