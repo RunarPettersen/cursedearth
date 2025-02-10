@@ -15,19 +15,22 @@ const auth = getAuth();
 async function displayDestinations(user) {
     const restaurantSection = document.querySelector(".restaurants-section");
     const monumentSection = document.querySelector(".monuments-section");
+    const occultSection = document.querySelector(".occult-section");
 
-    if (!restaurantSection || !monumentSection) {
+    if (!restaurantSection || !monumentSection || !occultSection) {
         console.error("❌ Error: Sections not found in the HTML.");
         return;
     }
 
     restaurantSection.innerHTML = "";
     monumentSection.innerHTML = "";
+    occultSection.innerHTML = "";
 
     try {
         const querySnapshot = await getDocs(collection(db, "destinations"));
         const restaurants = [];
         const monuments = [];
+        const occult = [];
 
         querySnapshot.forEach((doc) => {
             const data = { id: doc.id, ...doc.data() };
@@ -35,12 +38,15 @@ async function displayDestinations(user) {
                 restaurants.push(data);
             } else if (data.category.includes("monument")) {
                 monuments.push(data);
+            } else if (data.category.includes("occult")) {
+                occult.push(data);
             }
         });
 
         // ✅ Display up to 4 items for each category
         await displayLimitedDestinations(restaurants, restaurantSection, "restaurants");
         await displayLimitedDestinations(monuments, monumentSection, "monuments");
+        await displayLimitedDestinations(occult, occultSection, "occult");
 
         console.log("✅ Destinations loaded successfully!");
 

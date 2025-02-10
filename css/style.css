@@ -201,6 +201,23 @@ header .logo {
     color: var(--light-main-color);
 }
 
+.usericon {
+    width: 32px;  /* Adjust size */
+    height: 32px;
+    position: absolute;
+    top: 10px;  /* Adjust distance from the top */
+    right: 20px; /* Adjust distance from the right */
+    cursor: pointer;
+    color: white;
+}
+
+.nav-bar {
+    position: relative; /* Allows absolute positioning inside */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Style for the header navigation */
 .nav-bar {
     display: flex;
@@ -479,7 +496,7 @@ section.times output {
     background-color: var(--darker-main-color);
 }
 
-.restaurants h2, .monuments h2 {
+.restaurants h2, .monuments h2, .occult h2 {
     padding-inline-start: 30px;
     margin: 0;
     font-size: 2rem;
@@ -540,7 +557,7 @@ section.times output {
 .history {
     width: 100%;
     max-width: 1200px;
-    color: #000;
+    color: #ddd;
 }
 
 .history h2, h1 {
@@ -819,23 +836,6 @@ footer {
     .search-results {
         width: unset;
     }
-}
-
-.saved-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 20px 20px 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-#saved-section-h3 {
-    padding: 0 20px 10px 20px;
-    margin: 0 auto;
-    color: #999;
 }
 
 .destination-card {

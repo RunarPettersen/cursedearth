@@ -35,7 +35,7 @@ const displayCountries = (countries) => {
         return;
     }
 
-    countriesList.innerHTML = ""; // Clear previous content
+    countriesList.innerHTML = "";
 
     countries.forEach((country) => {
         const button = document.createElement("button");

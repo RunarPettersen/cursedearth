@@ -3,21 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Admin</title>
+    <title>This Cursed Earth - Register</title>
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
-    <h2>Register</h2>
-    <form id="registerForm">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit">Register</button>
-    </form>
-    <p id="registerMessage"></p>
-    <a href="login.html">Already have an account? Login</a>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="../"><img class="logo" src="../images/logo/this-cursed-earth-logo-tag-white-small.png" alt="This Cursed Earth Logo"></a>
+                <a href="../user/profile.html"><img class="usericon" src="../images/logo/usericon.svg" alt="Usericon"></a>
+                
+                <form id="searchForm" class="search-form" action="../search-results.html" method="get">
+                    <input type="text" id="searchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <label class="hamburger-menu" id="menuToggle">
+                    <input type="checkbox">
+                    <span class="visually-hidden">Hamburger Menu</span>
+                </label>
+            </nav>
     
-    <button id="googleSignInBtn" type="button">Sign in with Google</button>  
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../destinations/">Destination</a></li>
+                <li><a href="./discover/">Discover</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="../nearby/">Nearby</a></li>
+            </ul>
+    
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-menu" id="closeMenu">X</button>
+                <form id="mobileSearchForm" class="mobile-search-form" action="../search-results.html" method="get">
+                    <input type="text" id="mobileSearchInput" class="search-input" name="query" placeholder="Search...">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <ul class="mobile-nav-links">
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../destinations/">Destination</a></li>
+                    <li><a href="./discover/">Discover</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="../nearby/">Nearby</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p id="registerMessage"></p>
+        <a href="login.html">Already have an account? Login</a>
+
+        <button id="googleSignInBtn" type="button">Sign in with Google</button>  
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="../images/logo/cursed-favicon-big.png">
+            <div class="footer-about">
+                <ul class="footer-links">
+                    <li>ABOUT</li>
+                    <li><a href="../about/about.html">About Us</a></li>
+                    <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../about/terms-and-conditions.html">Terms and Conditions</a></li>
+                    <li><a href="../about/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2024 This Cursed Earth. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script type="module" src="../js/auth/register.js"></script>
 </body>

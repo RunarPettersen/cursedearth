@@ -1,32 +1,186 @@
 @import url("./style.css");
 
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
+/* ✅ Centering the Profile Section */
+main {
+    max-width: 1200px;
 }
 
+.profile-container {
+    max-width: 1200px;
+    min-width: 80%;
+    margin: 0 auto;
+}
+
+/* ✅ Profile Card */
 .profile-card {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    display: inline-block;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #111;
+    margin: 20px;
 }
 
 .profile-card img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
 }
 
+.profile-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.profile-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* ✅ Edit Profile Form */
+#editProfileForm {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#editProfileForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #111;
+    border-radius: 5px;
+}
+
+/* ✅ Buttons */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--darker-main-color);
+}
+
+/* ✅ Profile Statistics Section */
 .stats {
+    background: white;
     margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #111;
+    margin: 20px;
 }
 
+.stats h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.stats p {
+    font-size: 1rem;
+    margin: 8px 0;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ✅ Hide Elements */
 .hidden {
     display: none;
 }
+
+.saved-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.destination-card p {
+    font-size: 0;
+}
+
+.destination-card img {
+    clip-path: circle(50px);
+    height: 100px;
+}
+
+.destination-card button {
+    font-size: 12px;
+    background-color: var(--main-color);
+    padding: 4px 5px;
+    color: #fff;
+    width: 60px;
+}
+
+.destination-card h2 {
+    font-size: 12px;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.destination-card a {
+    text-decoration: none;
+}
+
+#saved-section-h3 {
+    margin-left: 20px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1000px) {
+    .saved-section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .saved-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .saved-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+

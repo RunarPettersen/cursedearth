@@ -1,4 +1,4 @@
-import { loginUser, googleSignIn } from "../utils/authUtils.js";
+import { loginUser, googleSignIn, resetPassword } from "../utils/authUtils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password");
     const messageElement = document.getElementById("loginMessage");
     const googleSignInBtn = document.getElementById("googleSignInBtn");
+    const forgotPasswordLink = document.getElementById("forgotPassword"); // ✅ Forgot Password Link
 
     if (!loginForm || !emailInput || !passwordInput || !messageElement) {
         console.error("❌ Error: Missing form or input elements.");
@@ -50,6 +51,27 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
                 console.error("❌ Google Sign-In error:", error);
                 showMessage("❌ Google Sign-In failed. Try again.", "error");
+            }
+        });
+    }
+
+    // ✅ Handle Password Reset
+    if (forgotPasswordLink) {
+        forgotPasswordLink.addEventListener("click", async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            if (!email) {
+                showMessage("⚠️ Please enter your email first.", "warning");
+                return;
+            }
+
+            try {
+                const result = await resetPassword(email);
+                showMessage(result.message, result.success ? "success" : "error");
+            } catch (error) {
+                console.error("❌ Password reset error:", error);
+                showMessage("❌ Failed to send reset email. Try again later.", "error");
             }
         });
     }

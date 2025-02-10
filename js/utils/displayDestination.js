@@ -11,7 +11,7 @@ export const displayDestinationDetails = (destination) => {
     const starClass = destination.darknessLevel === 100 ? "yellow-stars" : "default-stars";
 
     detailSection.innerHTML = `
-        <p><strong><a href="../destinations/country.html?country=${destination.country}">${destination.country}</a>, ${destination.city}</strong></p>
+        <p><strong><a href="../destinations/country.html?country=${destination.country}">${destination.country}</a>, <a href="../destinations/city.html?city=${destination.city}">${destination.city}</a></strong></p>
         <img src="../${destination.image || "images/placeholder.jpg"}" alt="${destination.title}" class="destination-image">
         <p><strong>${destination.introduction}</strong></p>
         <div class="description">${destination.description}</div>

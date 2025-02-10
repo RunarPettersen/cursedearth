@@ -1,5 +1,5 @@
 export const updateMetaTags = (destination) => {
-    document.title = `Secret Oslo - ${destination.title}`;
+    document.title = `This Cursed Earth - ${destination.title}`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

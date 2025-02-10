@@ -1,13 +1,44 @@
-import { auth, db, googleProvider } from "./firebaseConfig.js";
+import {
+    auth,
+    db,
+    googleProvider
+} from "./firebaseConfig.js";
+
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
     sendEmailVerification,
+    sendPasswordResetEmail,
     signInWithPopup
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
-import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+import {
+    doc,
+    setDoc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+/**
+ * ✅ Reset Password (Send Reset Email)
+ * @param {string} email
+ */
+export const resetPassword = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        console.log("✅ Password reset email sent.");
+        return {
+            success: true,
+            message: "✅ Password reset email sent! Check your inbox."
+        };
+    } catch (error) {
+        console.error("❌ Password reset failed:", error);
+        return {
+            success: false,
+            message: getAuthErrorMessage(error.code)
+        };
+    }
+};
 
 /** 
  * ✅ Register New User (Email & Password)

@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         category = "restaurant";
     } else if (url.includes("monuments")) {
         category = "monument";
-    } else {
+    } else if (url.includes("occult")) {
+        category = "occult";
+    }else {
         categorySection.innerHTML = "<p>Error: Category not recognized.</p>";
         return;
     }

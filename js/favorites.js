@@ -85,11 +85,12 @@ const displaySavedDestinations = async (destinationIDs, status, uid) => {
             const destination = destinationSnap.data();
             html += `
                 <div class="destination-card" id="destination-${id}">
+                    <a href="../discover/detail.html?id=${id}">
                     <img src="../${destination.image || 'images/placeholder.jpg'}" alt="${destination.title}" class="destination-image">
                     <h2>${destination.title}</h2>
                     <p>${destination.introduction}</p>
-                    <button onclick="window.location.href='../discover/detail.html?id=${id}'">View Details</button>
                     <button class="remove-btn" data-id="${id}" data-status="${status}" data-uid="${uid}">Remove</button>
+                    </a>
                 </div>
             `;
         } else {
