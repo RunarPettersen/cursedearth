@@ -195,6 +195,22 @@ header .logo {
     font-size: 18px;
     padding-right: 20px;
     font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--font-color);
+    transition: width .2s;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
 }
 
 .nav-links a.active-link {
@@ -330,7 +346,6 @@ header .logo {
 
 /* Search results page styles */
 .search-results {
-    width: 100%;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
@@ -356,7 +371,7 @@ header .logo {
 }
 
 .view-details-link {
-    color: var(--main-color);
+    color: var(--light-main-color);
     font-size: 14px;
     text-decoration: none;
 }
@@ -617,7 +632,13 @@ section.times output {
 h3 {
     margin: 10px 0;
     font-size: 1.2rem;
-    color: #333;
+    color: var(--font-color);
+}
+
+.destination-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: var(--black-main-color);
 }
 
 .favorite-item p {
@@ -758,7 +779,7 @@ footer {
 
 .footer-container a {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--light-main-color);
 }
 
 .footer-container ul {
@@ -832,10 +853,6 @@ footer {
         grid-template-columns: 1fr 1fr;
         width: unset;
     }
-
-    .search-results {
-        width: unset;
-    }
 }
 
 .destination-card {
@@ -884,7 +901,7 @@ footer {
     background-color: var(--darker-main-color);
 }
 
-/* ✅ Hover effect for clickable destination cards */
+/* Hover effect for clickable destination cards */
 .place-item {
     position: relative;
     background: #c5c3c4;
@@ -893,6 +910,10 @@ footer {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     cursor: pointer;
     color: #111;
+}
+
+.place-item h3 {
+    color: var(--black-main-color);
 }
 
 .place-item:hover {

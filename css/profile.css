@@ -25,10 +25,10 @@ main {
 }
 
 .profile-card img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 3px solid #007bff;
+    border: 3px solid var(--main-color);
     margin-bottom: 10px;
 }
 
@@ -41,6 +41,10 @@ main {
 .profile-card p {
     color: #666;
     font-size: 1rem;
+}
+
+.profile-card button {
+    width: 140px;
 }
 
 /* ✅ Edit Profile Form */
@@ -98,12 +102,17 @@ button:hover {
 .stats p {
     font-size: 1rem;
     margin: 8px 0;
-    padding: 10px;
     background: #f1f1f1;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.stats span {
+    font-size: 1.5rem;
+    padding: 5px;
+    color: var(--main-color);
+    font-weight: 500;
 }
 
 /* ✅ Hide Elements */
@@ -152,6 +161,31 @@ button:hover {
     margin-left: 20px;
 }
 
+.fa-solid {
+    font-size: 2rem;
+    color: var(--main-color);
+    padding-right: 5px;
+}
+
+/* ✅ Progress Bar Container */
+.progress-container {
+    width: 100%;
+    max-width: 400px;
+    height: 18px;
+    background-color: var(--light-main-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+/* ✅ Progress Bar */
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--main-color);
+    transition: width 0.5s ease-in-out;
+}
+
 /* ✅ Responsive Design */
 @media (max-width: 1000px) {
     .saved-section {
@@ -160,11 +194,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .profile-card img {
-        width: 100px;
-        height: 100px;
-    }
-
     .saved-section {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -175,8 +204,6 @@ button:hover {
         grid-template-columns: 1fr 1fr;
     }
 }
-
-
 
 
 

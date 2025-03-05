@@ -16,13 +16,17 @@ main {
     min-height: 70vh;
 }
 
+#destinationCount, #cityHeader {
+    padding: 20px;
+}
+
 #countryDestinations, #cityDestinations {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
     width: 100%;
-    max-width: 1200px;
+/*     max-width: 1200px; */
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -64,19 +68,6 @@ main {
     justify-content: center;
     gap: 10px;
 }
-
-/* .destination-card button {
-    background-color: var(--main-color);
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-} */
-
-/* .destination-card button:hover {
-    background-color: #a00;
-} */
 
 .container-cities {
     max-width: 1200px;
@@ -121,7 +112,11 @@ main {
     padding-inline-start: unset;
 }
 
-@media (max-width: 800px) {
+.city-card p {
+    padding: 10px;
+}
+
+/* @media (max-width: 800px) {
     #countryDestinations, .cities {
         grid-template-columns: 1fr 1fr;
     }
@@ -131,4 +126,4 @@ main {
     #countryDestinations, .cities {
         grid-template-columns: 1fr;
     }
-}
+} */

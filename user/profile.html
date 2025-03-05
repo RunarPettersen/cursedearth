@@ -6,6 +6,7 @@
     <title>This Cursed Earth - User Profile</title>
     <link rel="icon" type="image/x-icon" href="../images/logo/cursed-favicon-96.png">
     <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -60,23 +61,29 @@
             <h3 id="username">Loading...</h3>
             <p id="userEmail">Loading...</p>
             <p>Joined: <span id="joinedDate">Loading...</span></p>
-    
-            <button id="editProfileBtn">Edit Profile</button>
-            <div id="editProfileForm" class="hidden">
-                <input type="text" id="newUsername" placeholder="New username">
-                <input type="text" id="newAvatar" placeholder="New avatar URL">
-                <button id="saveProfileBtn">Save</button>
+            <div class="profile-buttons">
+                <button id="editProfileBtn">Edit Profile</button>
+                <div id="editProfileForm" class="hidden">
+                    <input type="text" id="newUsername" placeholder="New username">
+                    <input type="text" id="newAvatar" placeholder="New avatar URL">
+                    <button id="saveProfileBtn">Save</button>
+                </div>
+                <button id="logoutBtn">Logout</button>
             </div>
-            <button id="logoutBtn">Logout</button>
         </section>
     
         <section class="stats">
             <h3>Statistics</h3>
-            <p>🌍 Want to go: <span id="wantToGoCount">0</span></p>
-            <p>✅ Been Here: <span id="beenHereCount">0</span></p>
-            <p>🗺️ Countries Visited: <span id="countriesCount">0</span></p>
-            <p>🏙️ Cities Visited: <span id="citiesCount">0</span></p>
+            <p><i class="fa-solid fa-earth-americas"></i> Want to go: <span id="wantToGoCount">0</span></p>
+            <p><i class="fa-solid fa-square-check"></i> Been Here: <span id="beenHereCount">0</span></p>
+            <p><i class="fa-solid fa-map"></i> Countries Visited: <span id="countriesCount">0</span></p>
+            <p><i class="fa-solid fa-city"></i> Cities Visited: <span id="citiesCount">0</span></p>
+            <p><i class="fa-solid fa-location-dot"></i> Been to <span id="visitedCount">0</span> out of <span id="totalDestinations">0</span> places (<span id="visitedPercentage">0</span>%)</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
         </section>
+        
 
         <main>
             <h2>Saved Places</h2>

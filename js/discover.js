@@ -67,6 +67,7 @@ const displayDestinations = (destinations) => {
         destinationCard.innerHTML = `
             <img src="../${destination.image || 'images/placeholder.jpg'}" alt="${destination.title}" class="destination-image">
             <h2>${destination.title}</h2>
+            <p><a href="../destinations/city.html?city=${destination.city}">${destination.city}</a>, <a href="../destinations/country.html?country=${destination.country}">${destination.country}</a></p>
             <p>${destination.introduction}</p>
             <button class="details-btn" data-id="${destination.id}">View Details</button>
         `;

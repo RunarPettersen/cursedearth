@@ -1,7 +1,7 @@
 {
     "Africa": ["Egypt", "South Africa", "Morocco", "Kenya"],
     "Asia": ["China", "India", "Japan", "Thailand", "Turkmenistan"],
-    "Europe": ["Czech Republic", "Denmark", "France", "Germany", "Italy", "Norway", "Poland", "Romania", "Spain", "Sweden","United Kingdom" ],
+    "Europe": ["Czech Republic", "Denmark", "France", "Germany", "Hungary", "Iceland", "Italy", "Norway", "Poland", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden", "United Kingdom"],
     "North America": ["USA", "Canada", "Mexico"],
     "South America": ["Argentina", "Brazil", "Peru"],
     "Oceania": ["Australia", "New Zealand"]
